@@ -25,7 +25,7 @@ const PaginationControls: FC<PaginationControlsProps> = (
   const totalPages = Math.ceil(totalPosts / perPage) // محاسبه تعداد کل صفحات
 
   return (
-    <div className='flex gap-2'>
+    <div className='flex justify-center gap-2'>
       <button
         className='bg-blue-500 text-white p-1'
         disabled={!hasPrevPage}
