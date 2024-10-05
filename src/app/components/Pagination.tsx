@@ -36,7 +36,7 @@ const PaginationControls: FC<PaginationControlsProps> = (
       </button>
 
       <div>
-        {page} / {totalPages} {/* نمایش شماره صفحه و تعداد کل صفحات */}
+        {page} / {totalPages}
       </div>
 
       <button
