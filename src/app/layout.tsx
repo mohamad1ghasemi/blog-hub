@@ -1,3 +1,4 @@
+import SearchBar from "./components/SearchBar";
 import "./styles/global.css";
 export const metadata = {
   title: 'Next.js',
@@ -11,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+      <SearchBar />
+        {children}
+        </body>
     </html>
   )
 }
