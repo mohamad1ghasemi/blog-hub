@@ -1,14 +1,19 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import PostList from "./components/PostList";
+import SearchBar from "./components/SearchBar";
+import { Post } from './types'; // Import Post type
 
+export default function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+  const currentPage = Number(searchParams.page) || 1;
+  const postsPerPage = 8;
 
-export default async function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
-  const currentPage = Number(searchParams.page) || 1; // از searchParams برای تعیین currentPage استفاده کنید
-  const postsPerPage = 8; // تعداد پست‌ها در هر صفحه
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
   return (
-    <div className="flex ">
-      <PostList currentPage={currentPage} postsPerPage={postsPerPage} />
+    <div className="w-full items-center">
+      <SearchBar setFilteredPosts={setFilteredPosts} />
+      <PostList currentPage={currentPage} postsPerPage={postsPerPage} filteredPosts={filteredPosts} />
     </div>
   );
 }
