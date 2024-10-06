@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Post } from "../types";
 import { fetchData } from "../lib/api";
 import Link from "next/link";
+import Comments from "../components/Comment";
 
 interface PostDetailsProps {
   params: {
@@ -71,9 +72,13 @@ export default function PostDetails({ params }: PostDetailsProps) {
           </Link>
         </div>
         <p className="text-gray-600 mb-4">نویسنده: {post?.author}</p>
-        <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
+        <p className="text-gray-800 leading-relaxed whitespace-pre-wrap pb-10">
           {post?.content}
         </p>
+        <hr className="pb-10" />
+        <div className="max-w-80">
+        <Comments postId={params.postId} />
+        </div>
       </div>
     </div>
   );

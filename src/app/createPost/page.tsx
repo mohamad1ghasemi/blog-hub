@@ -26,8 +26,11 @@ export default function CreatePost() {
           genre,
         }),
       });
+
       if (response.ok) {
-        router.push("/");
+        const newPost = await response.json(); // Get the newly created post
+        const newPageId = newPost.id; // Assuming the API returns the post with its ID
+        router.push(`/${newPageId}`); // Navigate to the new post's page
       } else {
         console.error("ایجاد پست ناموفق بود.");
       }
