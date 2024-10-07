@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import PostList from "./components/PostList";
 import SearchBar from "./components/SearchBar";
-import { Post } from './types'; // Import Post type
+import { Post } from './types';
 
 export default function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
   const currentPage = Number(searchParams.page) || 1;

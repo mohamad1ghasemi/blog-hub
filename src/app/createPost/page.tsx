@@ -28,9 +28,9 @@ export default function CreatePost() {
       });
 
       if (response.ok) {
-        const newPost = await response.json(); // Get the newly created post
-        const newPageId = newPost.id; // Assuming the API returns the post with its ID
-        router.push(`/${newPageId}`); // Navigate to the new post's page
+        const newPost = await response.json();
+        const newPageId = newPost.id;
+        router.push(`/${newPageId}`);
       } else {
         console.error("ایجاد پست ناموفق بود.");
       }

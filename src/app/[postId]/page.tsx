@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Post } from "../types";
 import { fetchData } from "../lib/api";
 import Link from "next/link";
-import Comments from "../components/Comment";
 
 interface PostDetailsProps {
   params: {
@@ -77,7 +76,6 @@ export default function PostDetails({ params }: PostDetailsProps) {
         </p>
         <hr className="pb-10" />
         <div className="max-w-80">
-        <Comments postId={params.postId} />
         </div>
       </div>
     </div>
