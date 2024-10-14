@@ -21,3 +21,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'bNazanin';
+  src: url('/public/Fonts/bNazanin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
